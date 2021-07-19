@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.fragmentmanager.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_newFragment2"
+            app:destination="@id/newFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newFragment"
+        android:name="com.example.fragmentmanager.fragments.NewFragment"
+        android:label="fragment_new"
+        tools:layout="@layout/fragment_new" >
+        <action
+            android:id="@+id/action_newFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="greeting"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+</navigation>
